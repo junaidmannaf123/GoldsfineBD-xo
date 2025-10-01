@@ -59,10 +59,10 @@ export default function ProductsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
+      <section className="bg-gradient-to-br from-golden to-golden-dark text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Our Products</h1>
-          <p className="text-xl text-red-50 max-w-3xl text-pretty">
+          <p className="text-xl text-golden-50 max-w-3xl text-pretty">
             Comprehensive range of paper and packaging solutions designed to meet your business needs with quality and
             reliability.
           </p>
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                     alt={product.name}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-4 right-4 bg-red-600 p-2 rounded-lg">
+                  <div className="absolute top-4 right-4 bg-golden p-2 rounded-lg">
                     <product.icon className="h-6 w-6 text-white" />
                   </div>
                 </div>
@@ -96,13 +96,13 @@ export default function ProductsPage() {
                     <ul className="grid grid-cols-2 gap-2">
                       {product.features.map((feature, fIdx) => (
                         <li key={fIdx} className="text-sm text-neutral-600 flex items-center gap-1">
-                          <span className="text-red-600">•</span>
+                          <span className="text-golden">•</span>
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <Button className="w-full bg-red-600 hover:bg-red-700">Request Quote</Button>
+                  <Button className="w-full bg-golden hover:bg-golden-dark">Request Quote</Button>
                 </div>
               </div>
             ))}
@@ -116,13 +116,13 @@ export default function ProductsPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-neutral-900">
               Custom Solutions Available
-              <div className="h-1 w-20 bg-red-600 mt-2 mx-auto"></div>
+              <div className="h-1 w-20 bg-golden mt-2 mx-auto"></div>
             </h2>
             <p className="text-neutral-600 mb-8 leading-relaxed">
               We understand that every business has unique packaging needs. Our team can work with you to create custom
               solutions tailored to your specific requirements, including custom sizes, designs, and printing options.
             </p>
-            <Button size="lg" className="bg-red-600 hover:bg-red-700">
+            <Button size="lg" className="bg-golden hover:bg-golden-dark">
               Discuss Your Requirements
             </Button>
           </div>

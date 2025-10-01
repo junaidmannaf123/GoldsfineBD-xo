@@ -37,10 +37,10 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
+      <section className="bg-gradient-to-br from-golden to-golden-dark text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Contact Us</h1>
-          <p className="text-xl text-red-50 max-w-3xl text-pretty">
+          <p className="text-xl text-golden-50 max-w-3xl text-pretty">
             Get in touch with our team. We're here to answer your questions and discuss how we can meet your packaging
             needs.
           </p>
@@ -55,7 +55,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6 text-neutral-900">
                 Send Us a Message
-                <div className="h-1 w-20 bg-red-600 mt-2"></div>
+                <div className="h-1 w-20 bg-golden mt-2"></div>
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                     className="w-full"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-red-600 hover:bg-red-700">
+                <Button type="submit" size="lg" className="w-full bg-golden hover:bg-golden-dark">
                   <Send className="h-5 w-5 mr-2" />
                   Send Message
                 </Button>
@@ -142,12 +142,12 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6 text-neutral-900">
                 Contact Information
-                <div className="h-1 w-20 bg-red-600 mt-2"></div>
+                <div className="h-1 w-20 bg-golden mt-2"></div>
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-50 p-3 rounded-lg flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-red-600" />
+                  <div className="bg-golden-50 p-3 rounded-lg flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-golden" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900 mb-1">Head Office</h3>
@@ -162,8 +162,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-50 p-3 rounded-lg flex-shrink-0">
-                    <Phone className="h-6 w-6 text-red-600" />
+                  <div className="bg-golden-50 p-3 rounded-lg flex-shrink-0">
+                    <Phone className="h-6 w-6 text-golden" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900 mb-1">Phone</h3>
@@ -173,8 +173,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-50 p-3 rounded-lg flex-shrink-0">
-                    <Mail className="h-6 w-6 text-red-600" />
+                  <div className="bg-golden-50 p-3 rounded-lg flex-shrink-0">
+                    <Mail className="h-6 w-6 text-golden" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900 mb-1">Email</h3>
@@ -184,8 +184,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-50 p-3 rounded-lg flex-shrink-0">
-                    <Clock className="h-6 w-6 text-red-600" />
+                  <div className="bg-golden-50 p-3 rounded-lg flex-shrink-0">
+                    <Clock className="h-6 w-6 text-golden" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-900 mb-1">Business Hours</h3>
@@ -217,10 +217,10 @@ export default function ContactPage() {
             is ready to help.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700">
+            <Button size="lg" className="bg-golden hover:bg-golden-dark">
               Request a Quote
             </Button>
-            <Button size="lg" variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 bg-transparent">
+            <Button size="lg" variant="outline" className="border-golden text-golden hover:bg-golden-50 bg-transparent">
               Schedule a Call
             </Button>
           </div>

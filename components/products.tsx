@@ -19,7 +19,7 @@ export function Products() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-neutral-900 mb-4">Our All Products</h2>
-          <div className="w-24 h-1 bg-red-600 mx-auto" />
+          <div className="w-24 h-1 bg-golden mx-auto" />
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -38,7 +38,7 @@ export function Products() {
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold text-neutral-900 mb-4">{product.name}</h3>
-                <Button className="bg-red-600 hover:bg-red-700 w-full">Product Catalog</Button>
+                <Button className="bg-golden hover:bg-golden-dark w-full">Product Catalog</Button>
               </div>
             </div>
           ))}

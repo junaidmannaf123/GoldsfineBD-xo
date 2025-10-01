@@ -53,10 +53,10 @@ export default function SisterConcernPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
+      <section className="bg-gradient-to-br from-golden to-golden-dark text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Sister Concerns</h1>
-          <p className="text-xl text-red-50 max-w-3xl text-pretty">
+          <p className="text-xl text-golden-50 max-w-3xl text-pretty">
             The Goldsfine Group comprises multiple specialized companies, each excelling in their respective domains
             while maintaining our commitment to quality and innovation.
           </p>
@@ -73,8 +73,8 @@ export default function SisterConcernPage() {
                 className="bg-white border border-neutral-200 rounded-lg p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-6">
-                  <div className="bg-red-50 p-4 rounded-lg flex-shrink-0">
-                    <Building2 className="h-10 w-10 text-red-600" />
+                  <div className="bg-golden-50 p-4 rounded-lg flex-shrink-0">
+                    <Building2 className="h-10 w-10 text-golden" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-4">
@@ -92,7 +92,7 @@ export default function SisterConcernPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
+                        className="border-golden text-golden hover:bg-golden-50 bg-transparent"
                       >
                         <ExternalLink className="h-4 w-4 mr-2" />
                         Visit Website
@@ -123,19 +123,19 @@ export default function SisterConcernPage() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8 text-neutral-900">
               Collective Strength
-              <div className="h-1 w-20 bg-red-600 mt-2 mx-auto"></div>
+              <div className="h-1 w-20 bg-golden mt-2 mx-auto"></div>
             </h2>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white p-6 rounded-lg text-center shadow-sm">
-                <div className="text-3xl font-bold text-red-600 mb-2">1000+</div>
+                <div className="text-3xl font-bold text-golden mb-2">1000+</div>
                 <div className="text-neutral-600">Combined Employees</div>
               </div>
               <div className="bg-white p-6 rounded-lg text-center shadow-sm">
-                <div className="text-3xl font-bold text-red-600 mb-2">5</div>
+                <div className="text-3xl font-bold text-golden mb-2">5</div>
                 <div className="text-neutral-600">Manufacturing Units</div>
               </div>
               <div className="bg-white p-6 rounded-lg text-center shadow-sm">
-                <div className="text-3xl font-bold text-red-600 mb-2">2000+</div>
+                <div className="text-3xl font-bold text-golden mb-2">2000+</div>
                 <div className="text-neutral-600">Total Clients</div>
               </div>
             </div>

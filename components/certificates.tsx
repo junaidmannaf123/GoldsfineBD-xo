@@ -6,7 +6,7 @@ export function Certificates() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-neutral-900 mb-4">Our Certificate</h2>
-          <div className="w-24 h-1 bg-red-600 mx-auto" />
+          <div className="w-24 h-1 bg-golden mx-auto" />
         </div>
 
         <div className="max-w-3xl mx-auto">

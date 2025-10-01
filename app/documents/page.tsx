@@ -39,10 +39,10 @@ export default function DocumentsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
+      <section className="bg-gradient-to-br from-golden to-golden-dark text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Documents & Certifications</h1>
-          <p className="text-xl text-red-50 max-w-3xl text-pretty">
+          <p className="text-xl text-golden-50 max-w-3xl text-pretty">
             Access our company documents, certifications, and product catalogs. All documents are available for
             download.
           </p>
@@ -56,7 +56,7 @@ export default function DocumentsPage() {
             <div key={idx} className="mb-12">
               <h2 className="text-2xl font-bold mb-6 text-neutral-900">
                 {section.category}
-                <div className="h-1 w-20 bg-red-600 mt-2"></div>
+                <div className="h-1 w-20 bg-golden mt-2"></div>
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {section.items.map((doc, docIdx) => (
@@ -66,8 +66,8 @@ export default function DocumentsPage() {
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex items-start gap-4 flex-1">
-                        <div className="bg-red-50 p-3 rounded-lg">
-                          <doc.icon className="h-6 w-6 text-red-600" />
+                        <div className="bg-golden-50 p-3 rounded-lg">
+                          <doc.icon className="h-6 w-6 text-golden" />
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-neutral-900 mb-1">{doc.name}</h3>
@@ -77,7 +77,7 @@ export default function DocumentsPage() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
+                        className="border-golden text-golden hover:bg-golden-50 bg-transparent"
                       >
                         <Download className="h-4 w-4 mr-2" />
                         Download
@@ -99,7 +99,7 @@ export default function DocumentsPage() {
             If you require any additional documentation or have specific questions about our certifications, please
             contact our team.
           </p>
-          <Button size="lg" className="bg-red-600 hover:bg-red-700">
+          <Button size="lg" className="bg-golden hover:bg-golden-dark">
             Contact Us
           </Button>
         </div>

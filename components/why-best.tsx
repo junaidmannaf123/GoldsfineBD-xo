@@ -33,17 +33,17 @@ export function WhyBest() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-neutral-900 mb-4">Why We Are the Best in This Area?</h2>
-          <div className="w-24 h-1 bg-red-600 mx-auto" />
+          <div className="w-24 h-1 bg-golden mx-auto" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-neutral-50 p-8 rounded-lg border border-neutral-200 hover:border-red-600 transition-colors"
+              className="bg-neutral-50 p-8 rounded-lg border border-neutral-200 hover:border-golden transition-colors"
             >
               <div className="flex items-start gap-4">
-                <div className="bg-red-600 p-3 rounded-lg shrink-0">
+                <div className="bg-golden p-3 rounded-lg shrink-0">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <div>
