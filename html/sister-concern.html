@@ -12,7 +12,7 @@
 </head>
 <body>
     <header class="sticky top-0 z-50 bg-white shadow-lg luxury-shadow">
-        <div class="bg-black text-white border-b-2 border-golden">
+        <div class="bg-black text-white border-b-2 border-golden header-top-bar">
             <div class="container py-3">
                 <div class="flex flex-wrap items-center justify-between gap-4 text-sm">
                     <div class="flex flex-wrap items-center gap-4 md:gap-6">
@@ -20,29 +20,31 @@
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                             </svg>
-                            <span>+88 01819228869</span>
+                            <span class="hidden-mobile">+88 01819228869</span>
+                            <span class="mobile-only">Call Us</span>
                         </a>
                         <a href="mailto:info@goldsfinebd.com" class="flex items-center gap-2 hover:text-golden transition-colors">
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
-                            <span>info@goldsfinebd.com</span>
+                            <span class="hidden-mobile">info@goldsfinebd.com</span>
+                            <span class="mobile-only">Email</span>
                         </a>
-                        <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 hidden-mobile">
                             <svg class="h-4 w-4 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                             <span>10:00 AM To 5:00 PM</span>
                         </div>
                     </div>
-                    <a href="/contact.html" class="bg-golden hover:bg-golden-dark text-black font-semibold px-4 py-2 rounded text-sm">Enquire Now</a>
+                    <a href="contact.html" class="bg-golden hover:bg-golden-dark text-black font-semibold px-4 py-2 rounded text-sm btn">Enquire Now</a>
                 </div>
             </div>
         </div>
 
         <div class="container">
-            <div class="flex items-center py-4">
-                <a href="index.html" class="flex items-center gap-6 mr-8">
+            <div class="flex items-center justify-between py-4">
+                <a href="index.html" class="flex items-center gap-6 logo-container">
                     <div class="h-20 w-20 overflow-hidden rounded-lg bg-white p-2 shadow-lg">
                         <img src="../images/goldsfinebd-logo.png" alt="Goldsfine International Ltd." class="h-full w-full object-cover object-center">
                     </div>
@@ -52,8 +54,15 @@
                     </div>
                 </a>
 
-                <!-- Navigation Menu -->
-                <nav class="flex items-center gap-6 lg:gap-8 text-base lg:text-lg">
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-nav-toggle mobile-only" id="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="desktop-nav flex items-center gap-6 lg:gap-8 text-base lg:text-lg">
                     <a href="index.html" class="text-black hover:text-golden font-semibold transition-colors relative group whitespace-nowrap">
                         <span>Home</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-golden group-hover:w-full transition-all duration-500 ease-out"></span>
@@ -80,6 +89,18 @@
                     </a>
                 </nav>
             </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav-menu" id="mobile-nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="sister-concern.html" class="active">Sister Concern</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
         </div>
     </header>
 
@@ -232,50 +253,50 @@
                     <!-- Slideshow Container -->
                     <div class="relative bg-white rounded-lg shadow-xl overflow-hidden">
                         <!-- Main Image -->
-                        <div class="relative h-[500px] md:h-[600px]">
+                        <div class="relative h-[300px] md:h-[500px] lg:h-[600px] gallery-main">
                             <img id="main-slide" src="../images/10.jpg" alt="Gallery Image" class="w-full h-full object-cover transition-all duration-500 ease-in-out">
                             
                             <!-- Navigation Arrows -->
-                            <button id="prev-btn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/80 hover:bg-golden hover:text-black text-white p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button id="prev-btn" class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black/80 hover:bg-golden hover:text-black text-white p-2 md:p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20">
+                                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                                 </svg>
                             </button>
-                            <button id="next-btn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/80 hover:bg-golden hover:text-black text-white p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button id="next-btn" class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-black/80 hover:bg-golden hover:text-black text-white p-2 md:p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20">
+                                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </button>
 
                             <!-- Slide Counter -->
-                            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm">
+                            <div class="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm">
                                 <span id="slide-counter">1 of 8</span>
                             </div>
                         </div>
 
                         <!-- Thumbnail Navigation -->
-                        <div class="p-4 bg-neutral-100 relative">
+                        <div class="p-2 md:p-4 bg-neutral-100 relative gallery-thumbnails">
                             <!-- Bottom Navigation Arrows -->
-                            <button id="prev-thumb-btn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-golden hover:bg-golden-dark text-black p-2 rounded-full shadow-md z-10">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button id="prev-thumb-btn" class="absolute left-1 md:left-2 top-1/2 transform -translate-y-1/2 bg-golden hover:bg-golden-dark text-black p-1 md:p-2 rounded-full shadow-md z-10">
+                                <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                                 </svg>
                             </button>
-                            <button id="next-thumb-btn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-golden hover:bg-golden-dark text-black p-2 rounded-full shadow-md z-10">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button id="next-thumb-btn" class="absolute right-1 md:right-2 top-1/2 transform -translate-y-1/2 bg-golden hover:bg-golden-dark text-black p-1 md:p-2 rounded-full shadow-md z-10">
+                                <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </button>
                             
-                            <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide mx-8" id="thumbnail-container">
-                                <img src="../images/10.jpg" alt="Thumbnail 1" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70 active-thumbnail" data-slide="0">
-                                <img src="../images/11.jpg" alt="Thumbnail 2" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="1">
-                                <img src="../images/12.jpg" alt="Thumbnail 3" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="2">
-                                <img src="../images/13.jpg" alt="Thumbnail 4" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="3">
-                                <img src="../images/14.jpg" alt="Thumbnail 5" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="4">
-                                <img src="../images/15.jpg" alt="Thumbnail 6" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="5">
-                                <img src="../images/16.jpg" alt="Thumbnail 7" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="6">
-                                <img src="../images/17.jpg" alt="Thumbnail 8" class="thumbnail w-20 h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="7">
+                            <div class="flex gap-1 md:gap-2 overflow-x-auto pb-2 scrollbar-hide mx-6 md:mx-8" id="thumbnail-container">
+                                <img src="../images/10.jpg" alt="Thumbnail 1" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70 active-thumbnail" data-slide="0">
+                                <img src="../images/11.jpg" alt="Thumbnail 2" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="1">
+                                <img src="../images/12.jpg" alt="Thumbnail 3" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="2">
+                                <img src="../images/13.jpg" alt="Thumbnail 4" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="3">
+                                <img src="../images/14.jpg" alt="Thumbnail 5" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="4">
+                                <img src="../images/15.jpg" alt="Thumbnail 6" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="5">
+                                <img src="../images/16.jpg" alt="Thumbnail 7" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="6">
+                                <img src="../images/17.jpg" alt="Thumbnail 8" class="thumbnail gallery-thumbnail w-16 h-12 md:w-20 md:h-16 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-golden opacity-70" data-slide="7">
                             </div>
                     </div>
                     </div>
@@ -286,7 +307,7 @@
 
     <footer class="bg-black text-white border-t-2 border-golden">
         <div class="container py-16">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 footer-grid">
                 <div>
                     <div class="flex items-center gap-4 mb-6">
                         <div class="h-16 w-16 overflow-hidden rounded-lg bg-white p-2 shadow-lg">
@@ -371,6 +392,45 @@
     <script src="../script.js"></script>
     
     <script>
+        // Mobile Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+            const mobileNavMenu = document.getElementById('mobile-nav-menu');
+            
+            if (mobileNavToggle && mobileNavMenu) {
+                mobileNavToggle.addEventListener('click', function() {
+                    mobileNavToggle.classList.toggle('active');
+                    mobileNavMenu.classList.toggle('active');
+                    
+                    // Prevent body scroll when menu is open
+                    if (mobileNavMenu.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                const mobileNavLinks = mobileNavMenu.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileNavToggle.classList.remove('active');
+                        mobileNavMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNavToggle.contains(e.target) && !mobileNavMenu.contains(e.target)) {
+                        mobileNavToggle.classList.remove('active');
+                        mobileNavMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
+        
         // Enhanced Slideshow functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mainSlide = document.getElementById('main-slide');
