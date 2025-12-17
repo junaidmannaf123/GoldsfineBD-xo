@@ -9,6 +9,75 @@
     <link rel="shortcut icon" type="image/png" href="../images/goldsfinebd-logo.png">
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .certificate-slider {
+            position: relative;
+            padding: 0;
+        }
+        
+        .certificate-slides-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .certificate-slides {
+            display: flex;
+            width: 100%;
+        }
+        
+        .certificate-slide {
+            flex-shrink: 0;
+            width: 100%;
+        }
+        
+        .certificate-nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background: rgba(212, 175, 55, 0.7) !important;
+            backdrop-filter: blur(5px);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .certificate-nav-btn:hover {
+            opacity: 1;
+            background: rgba(212, 175, 55, 0.9) !important;
+            transform: scale(1.1);
+        }
+        
+        .certificate-nav-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .certificate-nav-prev {
+            left: 10px !important;
+            transform: translateY(-50%) !important;
+        }
+        
+        .certificate-nav-next {
+            right: 10px !important;
+            transform: translateY(-50%) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .certificate-nav-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .certificate-nav-prev {
+                left: 5px !important;
+            }
+            
+            .certificate-nav-next {
+                right: 5px !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="sticky top-0 z-50 bg-white shadow-lg luxury-shadow">
@@ -83,6 +152,10 @@
                         <span>Sister Concern</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-golden group-hover:w-full transition-all duration-500 ease-out"></span>
                     </a>
+                    <a href="gallery.html" class="text-black hover:text-golden font-semibold transition-colors relative group whitespace-nowrap">
+                        <span>Gallery</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-golden group-hover:w-full transition-all duration-500 ease-out"></span>
+                    </a>
                     <a href="contact.html" class="text-black hover:text-golden font-semibold transition-colors relative group whitespace-nowrap">
                         <span>Contact Us</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-golden group-hover:w-full transition-all duration-500 ease-out"></span>
@@ -99,6 +172,7 @@
                 <li><a href="documents.html" class="active">Documents</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="sister-concern.html">Sister Concern</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
@@ -107,20 +181,72 @@
     <main class="min-h-screen bg-white">
         <section class="section-padding bg-neutral-50">
             <div class="container">
-                <h1 class="text-4xl font-bold mb-6 text-neutral-900">Documents</h1>
-                <p class="text-neutral-600 mb-12">Our Certificate and Company License.</p>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="card professional-shadow">
-                        <h2 class="text-2xl font-bold mb-4 text-neutral-900">Our Certificate</h2>
-                        <img src="../images/business-certificate-dhaka-chamber-of-commerce.jpg" alt="Chamber of Commerce Certificate" class="w-full h-auto rounded mb-4">
-                        <p class="text-neutral-600">Recognitions and certifications that reflect our commitment to quality and trust.</p>
-                    </div>
-
-                    <div class="card professional-shadow">
-                        <h2 class="text-2xl font-bold mb-4 text-neutral-900">Company License</h2>
-                        <img src="../images/business-certificate-.jpg" alt="Company License" class="w-full h-auto rounded mb-4">
-                        <p class="text-neutral-600">Our valid company licenses and legal documents as required for operations.</p>
+                <h1 class="text-4xl font-semibold text-center mb-16 text-neutral-900">Certificates And Awards</h1>
+                
+                <div class="max-w-4xl mx-auto">
+                        <div class="relative certificate-slider">
+                            <div class="certificate-slides-container overflow-hidden rounded-lg">
+                                <div class="certificate-slides flex transition-transform duration-500 ease-in-out" id="certificate-slides">
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/1C.jpg" alt="Certificate 1C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/2C.jpg" alt="Certificate 2C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/3C.jpg" alt="Certificate 3C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/4C.jpg" alt="Certificate 4C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/5C.jpg" alt="Certificate 5C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/6C.jpg" alt="Certificate 6C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/7C.jpg" alt="Certificate 7C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/8C.jpg" alt="Certificate 8C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                    <div class="certificate-slide min-w-full">
+                                        <div class="card professional-shadow">
+                                            <img src="../images/9C.jpg" alt="Certificate 9C" class="w-full h-auto rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation Buttons -->
+                            <button class="certificate-nav-btn certificate-nav-prev absolute top-1/2 text-white p-3 rounded-full shadow-lg z-10" id="cert-prev-btn">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button class="certificate-nav-btn certificate-nav-next absolute top-1/2 text-white p-3 rounded-full shadow-lg z-10" id="cert-next-btn">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -214,6 +340,50 @@
     <script src="../script.js"></script>
     
     <script>
+        // Certificate Slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slidesContainer = document.getElementById('certificate-slides');
+            const prevBtn = document.getElementById('cert-prev-btn');
+            const nextBtn = document.getElementById('cert-next-btn');
+            
+            if (!slidesContainer || !prevBtn || !nextBtn) return;
+            
+            let currentSlide = 0;
+            const totalSlides = slidesContainer.children.length;
+            
+            function updateSlides() {
+                const translateX = -currentSlide * 100;
+                slidesContainer.style.transform = `translateX(${translateX}%)`;
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlides();
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlides();
+            }
+            
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Auto-play slideshow
+            let autoPlayInterval = setInterval(nextSlide, 4000);
+            
+            // Pause on hover
+            const slider = document.querySelector('.certificate-slider');
+            if (slider) {
+                slider.addEventListener('mouseenter', () => {
+                    clearInterval(autoPlayInterval);
+                });
+                slider.addEventListener('mouseleave', () => {
+                    autoPlayInterval = setInterval(nextSlide, 4000);
+                });
+            }
+        });
+        
         // Mobile Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileNavToggle = document.getElementById('mobile-nav-toggle');

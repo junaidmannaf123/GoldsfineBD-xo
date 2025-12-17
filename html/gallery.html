@@ -3,20 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Goldsfine International Ltd.</title>
-    <meta name="description" content="Get in touch with Goldsfine International Ltd. for paper and packaging solutions. Contact us for quotes, inquiries, and business partnerships.">
+    <title>Gallery - Goldsfine International Ltd.</title>
+    <meta name="description" content="View our gallery showcasing our achievements, events, and company activities at Goldsfine International Ltd.">
     <link rel="icon" type="image/png" href="../images/goldsfinebd-logo.png">
     <link rel="shortcut icon" type="image/png" href="../images/goldsfinebd-logo.png">
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            background: #f5f5f5;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        .gallery-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .gallery-overlay.active {
+            display: flex;
+        }
+        
+        .gallery-modal {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+        .gallery-modal img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .gallery-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-close:hover {
+            background: #D4AF37;
+            transform: scale(1.1);
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .gallery-nav:hover {
+            background: #D4AF37;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .gallery-prev {
+            left: -3rem;
+        }
+        
+        .gallery-next {
+            right: -3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            
+            .gallery-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+            
+            .gallery-prev {
+                left: 0.5rem;
+            }
+            
+            .gallery-next {
+                right: 0.5rem;
+            }
+            
+            .gallery-close {
+                top: -2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-lg luxury-shadow">
         <div class="bg-black text-white border-b-2 border-golden header-top-bar">
-            <div class="container mx-auto px-4 py-3">
+            <div class="container py-3">
                 <div class="flex flex-wrap items-center justify-between gap-4 text-sm">
                     <div class="flex flex-wrap items-center gap-4 md:gap-6">
                         <a href="tel:+8801819228869" class="flex items-center gap-2 hover:text-golden transition-colors">
@@ -40,9 +192,9 @@
                             <span>10:00 AM To 5:00 PM</span>
                         </div>
                     </div>
-                    <button class="bg-golden hover:bg-golden-dark text-black font-semibold px-4 py-2 rounded text-sm btn">
+                    <a href="contact.html" class="bg-golden hover:bg-golden-dark text-black font-semibold px-4 py-2 rounded text-sm btn">
                         Enquire Now
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -88,13 +240,13 @@
                         <span>Sister Concern</span>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-golden group-hover:w-full transition-all duration-500 ease-out"></span>
                     </a>
-                    <a href="gallery.html" class="text-black hover:text-golden font-semibold transition-colors relative group whitespace-nowrap">
+                    <a href="gallery.html" class="text-golden font-semibold transition-colors relative group whitespace-nowrap active">
                         <span>Gallery</span>
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-golden group-hover:w-full transition-all duration-500 ease-out"></span>
-                    </a>
-                    <a href="contact.html" class="text-golden font-semibold transition-colors relative group whitespace-nowrap active">
-                        <span>Contact Us</span>
                         <span class="absolute bottom-0 left-0 w-full h-0.5 bg-golden animated-underline"></span>
+                    </a>
+                    <a href="contact.html" class="text-black hover:text-golden font-semibold transition-colors relative group whitespace-nowrap">
+                        <span>Contact Us</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-golden group-hover:w-full transition-all duration-500 ease-out"></span>
                     </a>
                 </nav>
             </div>
@@ -108,187 +260,111 @@
                 <li><a href="documents.html">Documents</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="sister-concern.html">Sister Concern</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
     </header>
 
     <main class="min-h-screen bg-white">
-        <!-- Hero Section -->
-        <section style="background: linear-gradient(to bottom right, #FFF8DC, #FFD700, #FFF8DC); padding: 5rem 0;">
+        <section class="section-padding bg-neutral-50">
             <div class="container">
-                <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; background: linear-gradient(to right, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: #000000;">
-                    Contact Us
-                </h1>
-                <p style="font-size: 1.25rem; color: #000000; max-width: 48rem;">
-                    Get in touch with our team. We're here to answer your questions and discuss how we can meet your packaging needs.
-                </p>
-            </div>
-        </section>
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-neutral-900 mb-4">Our Gallery</h1>
+                    <div class="w-24 h-1 bg-golden mx-auto mb-6"></div>
+                    <p class="text-neutral-600 text-lg max-w-2xl mx-auto">
+                        Explore our collection of memorable moments, achievements, and company events.
+                    </p>
+                </div>
 
-        <!-- Contact Section -->
-        <section class="py-16">
-            <div class="container">
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Contact Form -->
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6 text-neutral-900">
-                            Send Us a Message
-                            <div class="h-1 w-20 bg-golden mt-2"></div>
-                        </h2>
-                        <form id="contactForm" class="space-y-6">
-                            <div class="form-group">
-                                <label for="name" class="form-label">
-                                    Full Name *
-                                </label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    required
-                                    class="form-input"
-                                />
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="form-group">
-                                    <label for="email" class="form-label">
-                                        Email Address *
-                                    </label>
-                                    <input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        required
-                                        class="form-input"
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone" class="form-label">
-                                        Phone Number
-                                    </label>
-                                    <input
-                                        id="phone"
-                                        name="phone"
-                                        type="tel"
-                                        class="form-input"
-                                    />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject" class="form-label">
-                                    Subject *
-                                </label>
-                                <input
-                                    id="subject"
-                                    name="subject"
-                                    type="text"
-                                    required
-                                    class="form-input"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="form-label">
-                                    Message *
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    required
-                                    rows="6"
-                                    class="form-textarea"
-                                ></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary w-full flex items-center justify-center gap-2">
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                                </svg>
-                                Send Message
-                            </button>
-                        </form>
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" id="gallery-grid">
+                    <div class="gallery-item" data-category="events">
+                        <img src="../images/1A.jpg" alt="Company Event" loading="lazy">
                     </div>
-
-                    <!-- Contact Information -->
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6 text-neutral-900">
-                            Contact Information
-                            <div class="h-1 w-20 bg-golden mt-2"></div>
-                        </h2>
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div class="bg-golden-50 p-3 rounded-lg flex-shrink-0">
-                                    <svg class="h-6 w-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-neutral-900 mb-1">Head Office</h3>
-                                    <p class="text-neutral-600 leading-relaxed">
-                                        Sel Trident Tower (7th Floor), 57 Purana Paltan,
-                                        <br>
-                                        Dhaka-1000, Bangladesh
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div class="bg-golden-50 p-3 rounded-lg flex-shrink-0">
-                                    <svg class="h-6 w-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-neutral-900 mb-1">Phone</h3>
-                                    <p class="text-neutral-600">+88 01915228805</p>
-                                    <p class="text-neutral-600">+88 02-8963254</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div class="bg-golden-50 p-3 rounded-lg flex-shrink-0">
-                                    <svg class="h-6 w-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-neutral-900 mb-1">Email</h3>
-                                    <p class="text-neutral-600">info@goldsfinebd.com</p>
-                                    <p class="text-neutral-600">sales@goldsfinebd.com</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div class="bg-golden-50 p-3 rounded-lg flex-shrink-0">
-                                    <svg class="h-6 w-6 text-golden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-neutral-900 mb-1">Business Hours</h3>
-                                    <p class="text-neutral-600">Saturday - Thursday: 10:00 AM - 5:00 PM</p>
-                                    <p class="text-neutral-600">Friday: Closed</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Interactive Google Map -->
-                        <div class="mt-8 bg-neutral-100 rounded-lg overflow-hidden h-64">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.276!2d90.4118777!3d23.7372521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9ae843fee7b%3A0xe0957a219bb6513a!2sGoldsfine%20International%20Corporation!5e0!3m2!1sen!2sbd!4v1735561600000!5m2!1sen!2sbd"
-                                width="100%"
-                                height="256"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Goldsfine International Office Location"
-                            ></iframe>
-                        </div>
+                    <div class="gallery-item" data-category="awards">
+                        <img src="../images/business-award-ceremony-professional.jpg" alt="Award Ceremony" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/1.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/2.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/3.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/4.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/5.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/10.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/11.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/12.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/13.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/14.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/15.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/16.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/17.jpg" alt="Product Showcase" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/medium-paper-rolls-packaging.jpg" alt="Medium Paper" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/liner-paper-sheets-industrial.jpg" alt="Liner Paper" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/duplex-board-cardboard-sheets.jpg" alt="Duplex Board" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/art-card-glossy-paper.jpg" alt="Art Card" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/folding-box-cardboard-packaging.jpg" alt="Folding Box" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/newsprint-paper-rolls.jpg" alt="Newsprint Paper" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/tapioca-starch-powder-bag.jpg" alt="Tapioca Starch" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/waste-paper-recycling-bales.jpg" alt="Waste Paper" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="products">
+                        <img src="../images/pulp-paper-raw-material.jpg" alt="Pulp Paper" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="gallery-overlay" id="gallery-overlay">
+        <button class="gallery-close" id="gallery-close">&times;</button>
+        <button class="gallery-nav gallery-prev" id="gallery-prev">&#8249;</button>
+        <button class="gallery-nav gallery-next" id="gallery-next">&#8250;</button>
+        <div class="gallery-modal">
+            <img id="gallery-modal-img" src="" alt="">
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-black text-white border-t-2 border-golden">
@@ -430,6 +506,82 @@
     <script src="../script.js"></script>
     
     <script>
+        // Gallery Lightbox Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const overlay = document.getElementById('gallery-overlay');
+            const modalImg = document.getElementById('gallery-modal-img');
+            const closeBtn = document.getElementById('gallery-close');
+            const prevBtn = document.getElementById('gallery-prev');
+            const nextBtn = document.getElementById('gallery-next');
+            let currentImageIndex = 0;
+            let visibleImages = [];
+            
+            // Get all images
+            function updateVisibleImages() {
+                visibleImages = Array.from(galleryItems)
+                    .map(item => item.querySelector('img').src);
+            }
+            
+            // Initialize visible images
+            updateVisibleImages();
+            
+            // Open lightbox
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    updateVisibleImages();
+                    const img = this.querySelector('img');
+                    currentImageIndex = visibleImages.indexOf(img.src);
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close lightbox
+            closeBtn.addEventListener('click', function() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Navigate images
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+                modalImg.src = visibleImages[currentImageIndex];
+            });
+            
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
+                modalImg.src = visibleImages[currentImageIndex];
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (overlay.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    } else if (e.key === 'ArrowLeft') {
+                        currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+                        modalImg.src = visibleImages[currentImageIndex];
+                    } else if (e.key === 'ArrowRight') {
+                        currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
+                        modalImg.src = visibleImages[currentImageIndex];
+                    }
+                }
+            });
+        });
+        
         // Mobile Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileNavToggle = document.getElementById('mobile-nav-toggle');
@@ -471,3 +623,4 @@
     </script>
 </body>
 </html>
+

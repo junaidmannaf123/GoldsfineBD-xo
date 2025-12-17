@@ -500,32 +500,26 @@
         }
 
         .employee-icon {
-            width: 65%;
-            height: 65%;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
             z-index: 1;
             position: relative;
         }
 
-        .premium-card:hover .employee-icon {
-            transform: scale(1.05);
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
-        }
-        .employee-icon {
-            width: 65%;
-            height: 65%;
-            object-fit: contain;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
-            z-index: 1;
-            position: relative;
+        .employee-icon.zoomed {
+            transform: scale(1.3);
+            object-position: center top;
         }
 
         .premium-card:hover .employee-icon {
-            transform: scale(1.05);
             filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+        }
+
+        .premium-card:hover .employee-icon.zoomed {
+            transform: scale(1.35);
         }
 
         /* Enhanced Typography - Compact */
@@ -1067,7 +1061,7 @@
                                 <!-- Profile Avatar -->
                                 <div class="premium-avatar">
                                     <div class="avatar-inner">
-                                        <img src="../images/EmployeeIcon.png" alt="Professional Employee Avatar" class="employee-icon">
+                                        <img src="../images/Abdul Karim.jpg" alt="Abdul Karim - Finance & Accounts" class="employee-icon zoomed">
                                     </div>
                                 </div>
                                 
@@ -1157,7 +1151,7 @@
                                 <!-- Profile Avatar -->
                                 <div class="premium-avatar">
                                     <div class="avatar-inner">
-                                        <img src="../images/EmployeeIcon.png" alt="Professional Employee Avatar" class="employee-icon">
+                                        <img src="../images/Kabirul Islam.jpg" alt="Kabirul Islam - Sr. Marketing Manager" class="employee-icon">
                                     </div>
                                 </div>
                                 
@@ -1187,7 +1181,7 @@
                             <div class="premium-card marketing-card">
                                 <div class="premium-avatar">
                                     <div class="avatar-inner">
-                                        <img src="../images/EmployeeIcon.png" alt="Professional Employee Avatar" class="employee-icon">
+                                        <img src="../images/Rubel Patwary.jpg" alt="Rubel Patwary - Manager" class="employee-icon zoomed">
                                     </div>
                                 </div>
                                 <div class="text-center mb-6">
@@ -1215,7 +1209,7 @@
                             <div class="premium-card marketing-card">
                                 <div class="premium-avatar">
                                     <div class="avatar-inner">
-                                        <img src="../images/EmployeeIcon.png" alt="Professional Employee Avatar" class="employee-icon">
+                                        <img src="../images/Ibrahim Gazi.jpg" alt="Ibrahim Gazi - Sr. Marketing Executive" class="employee-icon zoomed">
                                     </div>
                                 </div>
                                 <div class="text-center mb-6">
@@ -1243,7 +1237,7 @@
                             <div class="premium-card marketing-card">
                                 <div class="premium-avatar">
                                     <div class="avatar-inner">
-                                        <img src="../images/EmployeeIcon.png" alt="Professional Employee Avatar" class="employee-icon">
+                                        <img src="../images/S.M.R. Shiplu.jpg" alt="S.M.R. Shiplu - Marketing Executive" class="employee-icon zoomed">
                                     </div>
                                 </div>
                                 <div class="text-center mb-6">
@@ -1379,7 +1373,7 @@
                                 <!-- Profile Avatar -->
                                 <div class="premium-avatar">
                                     <div class="avatar-inner">
-                                        <img src="../images/EmployeeIcon.png" alt="Professional Employee Avatar" class="employee-icon">
+                                        <img src="../images/Eakub Hossain.jpg" alt="Eakub Hossain - Documentation" class="employee-icon zoomed">
                                     </div>
                                 </div>
                                 
@@ -1472,7 +1466,7 @@
                                 <!-- Profile Avatar -->
                                 <div class="premium-avatar">
                                     <div class="avatar-inner">
-                                        <img src="../images/EmployeeIcon.png" alt="Professional Employee Avatar" class="employee-icon">
+                                        <img src="../images/Tajul Islam.jpg" alt="Tajul Islam - Front Desk" class="employee-icon zoomed">
                                     </div>
                                 </div>
                                 
