@@ -68,10 +68,24 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isValid) {
                 // Here you would typically send the data to a server
                 console.log('Form submitted:', data);
-                alert('Thank you for your message! We will get back to you soon.');
-                this.reset();
             } else {
-                alert('Please fill in all required fields.');
+                // Show custom error message instead of alert
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg shadow-lg z-50 max-w-md';
+                errorMessage.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div><strong>Error!</strong> Please fill in all required fields.</div>
+                    </div>
+                `;
+                document.body.appendChild(errorMessage);
+                
+                // Remove message after 5 seconds
+                setTimeout(() => {
+                    errorMessage.remove();
+                }, 5000);
             }
         });
     }
@@ -274,23 +288,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // Newsletter subscription (if form exists)
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            
-            if (email) {
-                // Here you would typically send the email to your server
-                console.log('Newsletter subscription:', email);
-                alert('Thank you for subscribing to our newsletter!');
-                this.reset();
-            }
-        });
-    }
-
     // Product filter functionality
     const filterButtons = document.querySelectorAll('.filter-button');
     const productItems = document.querySelectorAll('.product-item');
