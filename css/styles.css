@@ -771,7 +771,7 @@ img {
 /* Button Enhancements */
 .btn-primary {
     background: linear-gradient(135deg, var(--golden) 0%, var(--golden-dark) 100%);
-    color: var(--black);
+    color: #ffffff;
     font-weight: 600;
     padding: 0.75rem 2rem;
     border-radius: 0.5rem;
@@ -784,11 +784,12 @@ img {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    color: #ffffff;
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--golden);
+    color: #ffffff;
     font-weight: 600;
     padding: 0.75rem 2rem;
     border: 2px solid var(--golden);
@@ -799,7 +800,7 @@ img {
 
 .btn-secondary:hover {
     background: var(--golden);
-    color: var(--black);
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
