@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificates - Goldsfine International Ltd.</title>
+    <title>Certificates And Awards - Goldsfine International Ltd.</title>
     <meta name="description" content="View our certifications and industry recognitions at Goldsfine International Ltd.">
     <link rel="icon" type="image/png" href="../images/goldsfinebd-logo.png">
     <link rel="shortcut icon" type="image/png" href="../images/goldsfinebd-logo.png">
@@ -63,6 +63,14 @@
         .certificate-nav-next {
             right: 10px !important;
             transform: translateY(-50%) !important;
+        }
+        
+        .certificate-counter {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #000000;
+            font-weight: 500;
         }
         
         @media (max-width: 768px) {
@@ -175,6 +183,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="documents.html">Documents</a></li>
+                <li><a href="certificates.html" class="active">Certificates And Awards</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="sister-concern.html">Sister Concern</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -184,19 +193,25 @@
     </header>
 
     <main class="min-h-screen bg-white">
-        <section class="section-padding bg-white">
+        <!-- Hero Section -->
+        <section class="certificate-hero section-padding py-20">
             <div class="container">
-                <div class="text-center mb-16">
-                    <h1 class="text-4xl font-bold text-neutral-900 mb-4">Our Certificates</h1>
-                    <div class="w-24 h-1 bg-golden mx-auto"></div>
-                    <p class="text-neutral-600 text-lg mt-6 max-w-2xl mx-auto">
-                        Recognitions and certifications that reflect our commitment to quality and trust.
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl md:text-6xl font-bold text-black mb-6 tracking-tight">Certificates And Awards</h1>
+                    <div class="w-32 h-1.5 bg-golden mx-auto mb-6"></div>
+                    <p class="text-black text-xl md:text-2xl mt-8 max-w-3xl mx-auto leading-relaxed">
+                        Recognitions and certifications that reflect our commitment to quality, excellence, and trust in the global marketplace.
                     </p>
                 </div>
+            </div>
+        </section>
 
-                <div class="max-w-4xl mx-auto">
+        <!-- Certificates Slider Section -->
+        <section class="section-padding bg-gradient-to-b from-neutral-50 to-white">
+            <div class="container">
+                <div class="max-w-5xl mx-auto">
                     <div class="relative certificate-slider">
-                        <div class="certificate-slides-container overflow-hidden rounded-lg">
+                        <div class="certificate-slides-container overflow-hidden">
                             <div class="certificate-slides flex transition-transform duration-500 ease-in-out" id="certificate-slides">
                                 <div class="certificate-slide min-w-full">
                                     <div class="card professional-shadow">
@@ -243,21 +258,44 @@
                                         <img src="../images/9C.jpg" alt="Certificate 9C" class="w-full h-auto rounded">
                                     </div>
                                 </div>
+                                <div class="certificate-slide min-w-full">
+                                    <div class="card professional-shadow">
+                                        <img src="../images/10C.jpg" alt="Certificate 10C" class="w-full h-auto rounded">
+                                    </div>
+                                </div>
+                                <div class="certificate-slide min-w-full">
+                                    <div class="card professional-shadow">
+                                        <img src="../images/11C.jpg" alt="Certificate 11C" class="w-full h-auto rounded">
+                                    </div>
+                                </div>
+                                <div class="certificate-slide min-w-full">
+                                    <div class="card professional-shadow">
+                                        <img src="../images/12C.jpg" alt="Certificate 12C" class="w-full h-auto rounded">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Navigation Buttons -->
-                        <button class="certificate-nav-btn certificate-nav-prev absolute top-1/2 text-white p-3 rounded-full shadow-lg z-10" id="cert-prev-btn">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        <button class="certificate-nav-btn certificate-nav-prev absolute top-1/2 text-white rounded-full z-10" id="cert-prev-btn">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
                             </svg>
                         </button>
-                        <button class="certificate-nav-btn certificate-nav-next absolute top-1/2 text-white p-3 rounded-full shadow-lg z-10" id="cert-next-btn">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        <button class="certificate-nav-btn certificate-nav-next absolute top-1/2 text-white rounded-full z-10" id="cert-next-btn">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                             </svg>
                         </button>
                     </div>
+                    
+                    <!-- Certificate Counter -->
+                    <div class="certificate-counter" id="certificate-counter">
+                        <span id="current-cert">1</span> / <span id="total-certs">12</span>
+                    </div>
+                    
+                    <!-- Certificate Dots Indicator -->
+                    <div class="certificate-dots" id="certificate-dots"></div>
                 </div>
             </div>
         </section>
@@ -331,7 +369,7 @@
                         </li>
                         <li>
                             <a href="certificates.html" class="text-neutral-300 hover:text-golden transition-colors text-sm">
-                                Certificates
+                                Certificates And Awards
                             </a>
                         </li>
                         <li>
@@ -408,15 +446,54 @@
             const slidesContainer = document.getElementById('certificate-slides');
             const prevBtn = document.getElementById('cert-prev-btn');
             const nextBtn = document.getElementById('cert-next-btn');
+            const currentCertSpan = document.getElementById('current-cert');
+            const totalCertsSpan = document.getElementById('total-certs');
+            const dotsContainer = document.getElementById('certificate-dots');
             
             if (!slidesContainer || !prevBtn || !nextBtn) return;
             
             let currentSlide = 0;
             const totalSlides = slidesContainer.children.length;
             
+            // Update total count
+            if (totalCertsSpan) {
+                totalCertsSpan.textContent = totalSlides;
+            }
+            
+            // Create dots
+            if (dotsContainer) {
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'certificate-dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentSlide = i;
+                        updateSlides();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+            
             function updateSlides() {
                 const translateX = -currentSlide * 100;
                 slidesContainer.style.transform = `translateX(${translateX}%)`;
+                
+                // Update counter
+                if (currentCertSpan) {
+                    currentCertSpan.textContent = currentSlide + 1;
+                }
+                
+                // Update dots
+                if (dotsContainer) {
+                    const dots = dotsContainer.querySelectorAll('.certificate-dot');
+                    dots.forEach((dot, index) => {
+                        if (index === currentSlide) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
             }
             
             function nextSlide() {
@@ -433,7 +510,7 @@
             prevBtn.addEventListener('click', prevSlide);
             
             // Auto-play slideshow
-            let autoPlayInterval = setInterval(nextSlide, 4000);
+            let autoPlayInterval = setInterval(nextSlide, 5000);
             
             // Pause on hover
             const slider = document.querySelector('.certificate-slider');
@@ -442,9 +519,15 @@
                     clearInterval(autoPlayInterval);
                 });
                 slider.addEventListener('mouseleave', () => {
-                    autoPlayInterval = setInterval(nextSlide, 4000);
+                    autoPlayInterval = setInterval(nextSlide, 5000);
                 });
             }
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
         });
         
         // Mobile Navigation functionality
