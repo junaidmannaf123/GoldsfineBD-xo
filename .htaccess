@@ -1,0 +1,21 @@
+# Set default directory index to html/index.html
+DirectoryIndex html/index.html
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect root to html/index.html
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ html/index.html [L]
+
+# Rewrite all HTML file requests to html/ directory
+# Example: /about.html -> html/about.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} \.html$ [NC]
+RewriteRule ^([^/]+\.html)$ html/$1 [L]
+
+# Allow direct access to existing files and directories (images, css, js, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
